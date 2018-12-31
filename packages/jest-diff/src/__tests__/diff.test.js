@@ -134,6 +134,38 @@ describe('asymmetric matchers', () => {
         'Expected string but received number.',
     );
   });
+
+  test('do not show up in an object diff if their type is correct', () => {
+    const actual = stripped(
+      {
+        a: 'first',
+        b: '1',
+      },
+      {
+        a: 'second',
+        b: expect.any(String),
+      },
+      unexpanded,
+    );
+    expect(actual).toEqual(expect.stringContaining('    "b": "1",'));
+    expect(actual).toEqual(expect.stringContaining('    "b": Any<String>,'));
+  });
+
+  test('show up in an object diff if their type is incorrect', () => {
+    const actual = stripped(
+      {
+        a: 'first',
+        b: 1,
+      },
+      {
+        a: 'second',
+        b: expect.any(String),
+      },
+      unexpanded,
+    );
+    expect(actual).toEqual(expect.stringContaining('-   "b": 1,'));
+    expect(actual).toEqual(expect.stringContaining('+   "b": Any<String>,'));
+  });
 });
 
 // Some of the following assertions seem complex, but compare to alternatives:

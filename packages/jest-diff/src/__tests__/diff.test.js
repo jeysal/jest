@@ -123,6 +123,19 @@ describe('falls back to not call toJSON', () => {
   });
 });
 
+describe('asymmetric matchers', () => {
+  test('do not cause a difference if their type is correct', () => {
+    expect(diff(expect.any(String), 'x')).toBe(null);
+  });
+
+  test('cause a difference if their type is incorrect', () => {
+    expect(stripped(expect.any(String), 1)).toBe(
+      '  Comparing two different types of values. ' +
+        'Expected string but received number.',
+    );
+  });
+});
+
 // Some of the following assertions seem complex, but compare to alternatives:
 // * toMatch instead of toMatchSnapshot:
 //   * to avoid visual complexity of escaped quotes in expected string

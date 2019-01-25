@@ -4,9 +4,11 @@
 
 ### Fixes
 
-- `[website]` Fix broken help link on homepage ([#7706](https://github.com/facebook/jest/pull/7706))
+- `[jest-cli]` Break dependency cycle when using Jest programmatically
 
 ### Chore & Maintenance
+
+- `[website]` Fix broken help link on homepage ([#7706](https://github.com/facebook/jest/pull/7706))
 
 ### Performance
 

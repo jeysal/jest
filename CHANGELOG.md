@@ -4,7 +4,7 @@
 
 ### Fixes
 
-- `[jest-cli]` Break dependency cycle when using Jest programmatically
+- `[jest-cli]` Break dependency cycle when using Jest programmatically ([#7707](https://github.com/facebook/jest/pull/7707)
 
 ### Chore & Maintenance
 

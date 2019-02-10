@@ -68,7 +68,7 @@ export default class ModuleMap {
     return this.getModule(name, platform, null, H.PACKAGE);
   }
 
-  getMockModule(name: string): string | null {
+  getMockModule(name: string): string | undefined {
     const mockPath =
       this._raw.mocks.get(name) || this._raw.mocks.get(name + '/index');
     return mockPath && fastPath.resolve(this._raw.rootDir, mockPath);

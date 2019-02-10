@@ -8,9 +8,9 @@
 import fs from 'fs';
 import path from 'path';
 import assert from 'assert';
+import {EventEmitter} from 'events';
 import common from 'sane/src/common';
 import watchman from 'fb-watchman';
-import {EventEmitter} from 'events';
 import RecrawlWarning from 'sane/src/utils/recrawl-warning-dedupe';
 
 const CHANGE_EVENT = common.CHANGE_EVENT;

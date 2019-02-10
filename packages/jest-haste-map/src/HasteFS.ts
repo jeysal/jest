@@ -23,24 +23,21 @@ export default class HasteFS {
 
   getModuleName(file: string): string | null {
     const fileMetadata = this._getFileData(file);
-    // @ts-ignore: ts doesnt understand the index lookup
     return (fileMetadata && fileMetadata[H.ID]) || null;
   }
 
   getSize(file: Config.Path): number | null {
     const fileMetadata = this._getFileData(file);
-    return (fileMetadata && (fileMetadata[H.SIZE] as number)) || null;
+    return (fileMetadata && fileMetadata[H.SIZE]) || null;
   }
 
   getDependencies(file: string): Array<string> | null {
     const fileMetadata = this._getFileData(file);
-    // @ts-ignore: ts doesnt understand the index lookup
     return (fileMetadata && fileMetadata[H.DEPENDENCIES]) || null;
   }
 
   getSha1(file: string): string | null {
     const fileMetadata = this._getFileData(file);
-    // @ts-ignore: ts doesnt understand the index lookup
     return (fileMetadata && fileMetadata[H.SHA1]) || null;
   }
 

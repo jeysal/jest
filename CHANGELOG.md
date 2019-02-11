@@ -26,6 +26,7 @@
 - `[jest-mock]`: Migrate to TypeScript ([#7847](https://github.com/facebook/jest/pull/7847), [#7850](https://github.com/facebook/jest/pull/7850))
 - `[jest-worker]`: Migrate to TypeScript ([#7853](https://github.com/facebook/jest/pull/7853))
 - `[jest-haste-map]`: Migrate to TypeScript ([#7854](https://github.com/facebook/jest/pull/7854))
+- `[babel-jest]`: Migrate to TypeScript ([#7862](https://github.com/facebook/jest/pull/7862))
 
 ### Performance
 

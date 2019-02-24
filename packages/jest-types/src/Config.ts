@@ -44,8 +44,12 @@ export type DefaultOptions = {
     | undefined;
   cwd: Path;
   dependencyExtractor: string | null | undefined;
+  detectLeaks: boolean;
+  detectOpenHandles: boolean;
+  displayName: string | null | undefined;
   errorOnDeprecated: boolean;
   expand: boolean;
+  extraGlobals: Array<string>;
   filter: Path | null | undefined;
   forceCoverageMatch: Array<Glob>;
   globals: ConfigGlobals;
@@ -55,10 +59,13 @@ export type DefaultOptions = {
   maxConcurrency: number;
   moduleDirectories: Array<string>;
   moduleFileExtensions: Array<string>;
+  moduleLoader: Path | null | undefined;
   moduleNameMapper: {
     [key: string]: string;
   };
   modulePathIgnorePatterns: Array<string>;
+  modulePaths: Array<string>;
+  name: string | null | undefined;
   noStackTrace: boolean;
   notify: boolean;
   notifyMode: string;
@@ -76,6 +83,8 @@ export type DefaultOptions = {
   setupFiles: Array<Path>;
   setupFilesAfterEnv: Array<Path>;
   skipFilter: boolean;
+  skipNodeResolution: boolean;
+  snapshotResolver: Path | null | undefined;
   snapshotSerializers: Array<Path>;
   testEnvironment: string;
   testEnvironmentOptions: Object;
@@ -96,6 +105,7 @@ export type DefaultOptions = {
     | undefined;
   transformIgnorePatterns: Array<Glob>;
   watchPathIgnorePatterns: Array<string>;
+  unmockedModulePathPatterns: Array<string>;
   useStderr: boolean;
   verbose: boolean | null | undefined;
   watch: boolean;
@@ -124,7 +134,7 @@ export type InitialOptions = {
       [key: string]: number;
     };
   };
-  dependencyExtractor?: string;
+  dependencyExtractor?: string | null | undefined;
   detectLeaks?: boolean;
   detectOpenHandles?: boolean;
   displayName?: string;
@@ -147,7 +157,7 @@ export type InitialOptions = {
   maxConcurrency?: number;
   moduleDirectories?: Array<string>;
   moduleFileExtensions?: Array<string>;
-  moduleLoader?: Path;
+  moduleLoader?: Path | null | undefined;
   moduleNameMapper?: {
     [key: string]: string;
   };
@@ -308,7 +318,7 @@ export type ProjectConfig = {
   clearMocks: boolean;
   coveragePathIgnorePatterns: Array<string>;
   cwd: Path;
-  dependencyExtractor?: string;
+  dependencyExtractor: string | null | undefined;
   detectLeaks: boolean;
   detectOpenHandles: boolean;
   displayName: string | null | undefined;
@@ -322,7 +332,7 @@ export type ProjectConfig = {
   haste: HasteConfig;
   moduleDirectories: Array<string>;
   moduleFileExtensions: Array<string>;
-  moduleLoader: Path;
+  moduleLoader: Path | null | undefined;
   moduleNameMapper: Array<[string, string]>;
   modulePathIgnorePatterns: Array<string>;
   modulePaths: Array<string>;

@@ -5,6 +5,7 @@
     "rootDir": "src"
   },
   "references": [
+    {"path": "../jest-debug"},
     {"path": "../jest-each"},
     {"path": "../jest-environment"},
     {"path": "../jest-matcher-utils"},

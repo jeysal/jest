@@ -5,6 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+import * as globals from '@jest/debug';
 import {Config} from '@jest/types';
 import {AssertionResult, Status, TestResult} from '@jest/test-result';
 import {extractExpectedAssertionsErrors, getState, setState} from 'expect';
@@ -18,7 +19,6 @@ import throat from 'throat';
 import {addEventHandler, dispatch, ROOT_DESCRIBE_BLOCK_NAME} from '../state';
 import {getTestID} from '../utils';
 import run from '../run';
-import globals from '..';
 import {Event, RunResult, TestEntry} from '../types';
 
 type Process = NodeJS.Process;

@@ -6,10 +6,12 @@
  */
 'use strict';
 
-const path = require('path');
-const webpack = require('webpack');
 const camelCase = require('camelcase');
+const path = require('path');
 const rimraf = require('rimraf');
+
+const webpack = require('webpack');
+const PnpWebpackPlugin = require('pnp-webpack-plugin');
 
 const transformOptions = require('../babel.config.js');
 
@@ -59,6 +61,7 @@ function browserBuild(pkgName, entryPath, destination) {
           ],
         },
         resolve: {
+          plugins: [PnpWebpackPlugin],
           alias: {
             chalk: path.resolve(
               __dirname,
@@ -66,6 +69,9 @@ function browserBuild(pkgName, entryPath, destination) {
             ),
           },
           extensions: ['.js', '.json', '.ts'],
+        },
+        resolveLoader: {
+          plugins: [PnpWebpackPlugin.moduleLoader(module)],
         },
         node: {
           fs: 'empty',

@@ -58,12 +58,14 @@
     "mkdirp": "^0.5.1",
     "mocha": "^6.0.2",
     "mock-fs": "^4.4.1",
+    "pnp-webpack-plugin": "^1.4.1",
     "prettier": "^1.16.1",
     "prettylint": "^1.0.0",
     "progress": "^2.0.0",
     "promise": "^8.0.2",
     "readable-stream": "^3.0.3",
     "realpath-native": "^1.1.0",
+    "request": "^2.88.0",
     "resolve": "^1.4.0",
     "rimraf": "^2.6.2",
     "slash": "^2.0.0",
@@ -96,6 +98,9 @@
     "test": "yarn lint && yarn jest",
     "watch": "yarn build && node ./scripts/watch.js",
     "watch:ts": "yarn build:ts --watch"
+  },
+  "installConfig": {
+    "pnp": true
   },
   "workspaces": {
     "packages": [

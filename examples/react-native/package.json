@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "start": "yarn react-native start",
     "test": "jest"
   },
   "dependencies": {
     "react": "16.6.3",
-    "react-native": "0.58.6"
+    "react-native": "^0.59.1"
   },
   "devDependencies": {
     "@babel/core": "*",

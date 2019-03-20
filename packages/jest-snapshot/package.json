@@ -27,6 +27,7 @@
     "jest-haste-map": "^24.0.0"
   },
   "devDependencies": {
+    "@babel/traverse": "^7.4.0",
     "@types/mkdirp": "^0.5.2",
     "@types/natural-compare": "^1.4.0",
     "@types/prettier": "^1.16.1",

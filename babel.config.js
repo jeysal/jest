@@ -4,28 +4,31 @@ module.exports = {
   babelrcRoots: ['examples/*'],
   overrides: [
     {
-      presets: ['@babel/preset-flow'],
+      presets: [require.resolve('@babel/preset-flow')],
       test: '**/*.js',
     },
     {
       plugins: [
-        'babel-plugin-typescript-strip-namespaces',
+        require.resolve('babel-plugin-typescript-strip-namespaces'),
         require.resolve(
           './scripts/babel-plugin-jest-replace-ts-export-assignment.js'
         ),
       ],
-      presets: ['@babel/preset-typescript'],
+      presets: [require.resolve('@babel/preset-typescript')],
       test: /\.tsx?$/,
     },
   ],
   plugins: [
-    ['@babel/plugin-transform-modules-commonjs', {allowTopLevelThis: true}],
-    '@babel/plugin-transform-strict-mode',
-    '@babel/plugin-proposal-class-properties',
+    [
+      require.resolve('@babel/plugin-transform-modules-commonjs'),
+      {allowTopLevelThis: true},
+    ],
+    require.resolve('@babel/plugin-transform-strict-mode'),
+    require.resolve('@babel/plugin-proposal-class-properties'),
   ],
   presets: [
     [
-      '@babel/preset-env',
+      require.resolve('@babel/preset-env'),
       {
         shippedProposals: true,
         targets: {node: 6},

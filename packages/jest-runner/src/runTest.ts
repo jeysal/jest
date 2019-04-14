@@ -192,6 +192,11 @@ async function runTestInternal(
   // For runtime errors
   sourcemapSupport.install(sourcemapOptions);
 
+  runtime.requireInternalModule(
+    require.resolve('@jest/strict-async'),
+    '@jest/strict-async',
+  );
+
   if (
     environment.global &&
     environment.global.process &&

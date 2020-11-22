@@ -607,6 +607,9 @@ export default class Runtime {
 
   requireInternalModule<T = unknown>(from: Config.Path, to?: string): T {
     if (to) {
+      if (to === 'chalk' || to === 'co' || to === 'dedent' || to === 'throat') {
+        return require(to);
+      }
       const outsideJestVmPath = decodePossibleOutsideJestVmPath(to);
       if (outsideJestVmPath) {
         return require(outsideJestVmPath);
